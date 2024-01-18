@@ -1,0 +1,238 @@
+// --------------------------HEADER--------------------------
+
+// --------------------------PAGE D'ACCUEIL--------------------------
+
+// SECTION ACCUEIL
+.img-home {
+  height: auto;
+  background-color: black;
+
+  .img-container {
+    height: 35vh;
+
+    .img-plage {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .text-presentation {
+    padding: 4rem 1.6rem;
+    text-align: center;
+    background-color: #fff;
+
+    h1 {
+      color: blue;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+  }
+}
+
+// SECTION PRODUIT
+.product-wrapper {
+  padding: 30px 60px;
+
+  .btn-productWrapper {
+    text-align: center;
+    padding-top: 1rem;
+  }
+}
+
+// IMAGES SECTION
+.images-block {
+  padding: 30px 60px;
+
+  .img-small {
+    width: 45vw;
+    position: absolute;
+    z-index: 1;
+    box-shadow: 10px 10px 40px 5px rgba(0, 0, 0, 0.55);
+
+    .img-1 {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .img-large {
+    width: 50vw;
+    position: relative;
+    left: 30%;
+    margin-top: 60px;
+    box-shadow: 10px 10px 40px 5px rgba(0, 0, 0, 0.55);
+
+    .img-2 {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+// DESCRIPTION
+.description {
+  padding: 30px 60px;
+
+  .text-content {
+    background-color: #a3c2e1;
+
+    p {
+      text-align: justify;
+    }
+  }
+}
+
+// -----------------------------PAGE PRODUIT------------------------------
+
+.product-desc {
+  .img-product-desc {
+    width: auto;
+    height: auto;
+
+    img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+// -----------------------------FAQ------------------------------
+
+.faq-section {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent !important;
+
+  h3 {
+    margin: 50px 0 0;
+    text-align: center;
+  }
+
+  h5 {
+    font-size: 22px;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .faq-container {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .faq {
+    background-color: #f0f0f0;
+    border: 1px solid #9fa4a8;
+    border-radius: 10px;
+    margin: 20px 0;
+    padding: 30px;
+    position: relative;
+    overflow: hidden;
+    transition: 0.3s ease;
+
+    &.active {
+      background-color: #fff;
+    }
+
+    .faq-text {
+      user-select: none;
+      height: 0;
+      margin: 0;
+      padding: 0;
+      color: transparent;
+      transition: all 0.5s ease-in-out;
+
+      &.active-txt {
+        margin: 40px 0 0;
+        height: 50px;
+        color: #000;
+      }
+    }
+
+    .faq-title {
+      margin: 0 35px 0 0;
+    }
+
+    .faq-toggle {
+      background-color: transparent;
+      border: 0;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      padding: 0;
+      position: absolute;
+      top: 30px;
+      right: 30px;
+      height: 25px;
+      width: 25px;
+
+      &:hover {
+        color: #fff;
+        background-color: #a3c2e1;
+      }
+
+      &.active {
+        &:hover {
+          background-color: grey;
+        }
+
+        .fa-chevron-up {
+          margin-bottom: 2.5px;
+          margin-left: 1px;
+          display: block;
+        }
+
+        .fa-chevron-down {
+          display: none;
+        }
+      }
+
+      .fa-chevron-up {
+        margin-bottom: 2.5px;
+        margin-left: 1px;
+        display: none;
+      }
+
+      .fa-chevron-down {
+        display: block;
+      }
+    }
+  }
+}
+
+// --------------------------FOOTER--------------------------
+
+.footer {
+  .logo-footer {
+    display: flex;
+  }
+
+  .socials {
+    display: flex;
+    flex-wrap: wrap;
+
+    h4 {
+      width: 100%;
+    }
+
+    .instagram-logo,
+    .tiktok-logo {
+      background-color: #a3c2e1;
+      border-radius: 50%;
+      padding: 10px;
+    }
+  }
+
+  .copyright-text {
+    text-align: center;
+
+    p {
+      margin-bottom: 0;
+    }
+  }
+}

@@ -1,0 +1,86 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Produit -
+	{{ product.name }}
+{% endblock %}
+
+{% block stylesheets %}
+	<link rel="stylesheet" href="{{ asset('assets/styles/bootstrap.min.css') }}">
+	<link rel="stylesheet" href="{{ asset('assets/styles/style.css') }}">
+{% endblock %}
+
+{% block body %}
+	<main class="container">
+		<section class="row">
+			<div class="">
+				<div id="carouselExampleIndicators" class="carousel slide">
+					<div class="carousel-indicators">
+						{% for iteration in 1..product.images|length %}
+							<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="{{ iteration - 1 }}" {{ (loop.first) ? 'class="active" aria-current="true"' : '' }} aria-label="Slide {{ iteration }}"></button>
+						{% endfor %}
+					</div>
+					<div class="carousel-inner">
+						{% for image in product.images %}
+							<div class="carousel-item {{ (loop.first) ? 'active' : '' }}">
+								<img src="{{ asset('assets/uploads/') ~ image.name }}" class="d-block w-100" alt="{{ product.name }}">
+							</div>
+						{% endfor %}
+					</div>
+					<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						<span class="visually-hidden">Previous</span>
+					</button>
+					<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+						<span class="carousel-control-next-icon" aria-hidden="true"></span>
+						<span class="visually-hidden">Next</span>
+					</button>
+				</div>
+			</div>
+			<div class="">
+				<p>{{ product.name }}</p>
+				<p>{{ product.description }}</p>
+				<p>COULEURS</p>
+				<p>S M L XL</p>
+				<p>COULEURS</p>
+				<p>Il reste
+					{{ product.stock }}
+					produits en stock</p>
+				<p>prix :
+					{{ product.price / 100 }}
+					€</p>
+				{% if product.stock > 0 %}
+					<a href="{{ path('cart_add', {id: product.id}) }}" class="btn btn-success">Ajouter au panier</a>
+				{% else %}
+					<p class="text-danger">Temporairement en rupture de stock</p>
+				{% endif %}
+			</div>
+			<div class="product-desc">
+				<div>
+					<h3>
+						Le short 'awra allie pudeur et style
+					</h3>
+					<p>
+						Découvrez l'alliance de confort et de pudeur avec notre Short 'Awra Zayam.						
+						Pavanez vous sur la plage avec style tout en préservant votre pudeur lors de vos moments de baignade. Conçu pour offrir une couverture optimale, ce short 'awra fusionne style, confort et respect des principes de la modestie islamique.
+						Adapté aussi pour le sport						
+						Très léger et extensible, atteignez de nouveaux sommets tout en maintenant votre pudeur avec le Short 'Awra Zayam. Parfait pour les activités sportives, ce short offre une liberté de mouvement sans compromis sur l'élégance et le respect des valeurs islamiques.						
+						Rejoignez les hommes qui aiment le style et la pudeur et portez le short 'awra durant votre baignade et votre pratique du sports.
+					</p>
+				</div>
+				<div class="img-product-desc">
+					<img src="{{ asset('assets/uploads/montage.png') }}"/>
+				</div>
+			</div>
+
+			{% include "partials/faq.html.twig" %}
+
+			<div class="reviews">
+				reviews
+			</div>
+		</section>
+	</main>
+{% endblock %}
+
+{% block javascripts %}
+	<script src="{{ asset('assets/js/script.js') }}" defer></script>
+{% endblock %}

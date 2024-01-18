@@ -1,7 +1,100 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello HomeController!{% endblock %}
+{% block meta %}
+	{# Inserer tous les champs meta #}
+{% endblock %}
+
+{% block title %}Zayam - Accueil
+{% endblock %}
+
+{% block stylesheets %}
+	<link rel="stylesheet" href="{{ asset('assets/styles/bootstrap.min.css') }}">
+	<link rel="stylesheet" href="{{ asset('assets/styles/style.css') }}">
+{% endblock %}
 
 {% block body %}
-<p>Hello HomeController!</p>
+
+	{# SECTION IMAGE ACCUEIL #}
+	<section>
+		<div class="img-home">
+			<div class="img-container">
+				<img class="img-plage" src="{{ asset('assets/uploads/plage.jpg') }}"/>
+			</div>
+			<div class="text-presentation">
+				<h1>Zayam - le short qui cache la 'awra</h1>
+                <p>La pudeur sans compromis</p>
+                <a href="{{ path('product_short', { "slug": product[0].slug }) }}" class="btn btn-primary btn-lg">Voir le produit</a>
+			</div>
+		</div>
+	</section>
+
+	{# SECTION SLIDER PRODUIT ACCUEIL #}
+	<section>
+		<div class="product-wrapper">
+			<div id="carouselExampleIndicators" class="carousel slide">
+				<div class="carousel-indicators">
+					<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+					<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+					<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+				</div>
+				<div class="carousel-inner">
+					<div class="carousel-item active">
+						<img src="{{ asset('assets/uploads/shortBleu.jpg') }}" class="d-block w-100" alt="...">
+					</div>
+					<div class="carousel-item">
+						<img src="{{ asset('assets/uploads/shortNoir.jpg') }}" class="d-block w-100" alt="...">
+					</div>
+					<div class="carousel-item">
+						<img src="{{ asset('assets/uploads/escaliers.jpg') }}" class="d-block w-100" alt="...">
+					</div>
+				</div>
+				<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					<span class="visually-hidden">Previous</span>
+				</button>
+				<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+					<span class="carousel-control-next-icon" aria-hidden="true"></span>
+					<span class="visually-hidden">Next</span>
+				</button>
+			</div>
+			<div class="btn-productWrapper">
+				<a href="{{ path('product_short', { "slug": product[0].slug }) }}" class="btn btn-primary btn-lg">Voir le produit</a>
+			</div>
+		</div>
+	</section>
+
+	{# SECTION IMAGE #}
+	<section>
+		<div class="images-block">
+			<div class="img-small">
+				<img src="{{ asset('assets/uploads/grosPlanEscaliers.jpg') }}" class="img-1"/>
+			</div>
+			<div class="img-large">
+				<img src="{{ asset('assets/uploads/boxeBleu.jpg') }}" class="img-2"/>
+			</div>
+		</div>
+	</section>
+
+	{# SECTION TEXTE #}
+	<section>
+		<div class="description">
+			<div class="text-content">
+				<h2>{{ product[0].name }}</h2>
+				<p>
+					Découvrez notre Short de Bain 'Awra', conçu avec soin pour répondre 
+					aux besoins des hommes musulmans cherchant une option de maillot de bain 
+					qui respecte les principes de modestie islamique.
+					Profitez du plaisir des activités nautiques et sportives tout en préservant 
+					votre pudeur avec ce short de bain pensé pour couvrir adéquatement la 'awra.
+				</p>
+			</div>
+		</div>
+	</section>
+
+    {% include "partials/faq.html.twig" %}
+
+	{# SECTION AVIS #}
+	<section class="rev-section">
+        <div></div>
+    </section>
 {% endblock %}
