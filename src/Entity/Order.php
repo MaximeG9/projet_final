@@ -27,7 +27,7 @@ class Order
     #[ORM\ManyToOne(inversedBy: 'orders')]
     private ?Ticket $ticket = null;
 
-    #[ORM\OneToMany(mappedBy: 'orders', targetEntity: OrderDetails::class, orphanRemoval: true)]
+    #[ORM\OneToMany(mappedBy: 'orders', targetEntity: OrderDetails::class, orphanRemoval: true, cascade: ['persist'])]
     private Collection $orderDetails;
 
     public function __construct()

@@ -61,4 +61,61 @@ class CartController extends AbstractController
         //On redirige vers la page du panier
         return $this->redirectToRoute('cart_index');
     }
+
+
+    #[Route('/remove/{id}', name: 'remove')]
+    public function remove(Product $product, SessionInterface $session): Response
+    {
+        // Récupérer l'id du produit
+        $id = $product->getId();
+
+        //On récupère le panier existant
+        $panier = $session->get('panier', []);
+
+        //On ajoute le produit du panier s'il n'y a qu'un exemplaire
+        //Sinon on décrémente sa quantité
+        if (!empty($panier[$id])) {
+            if ($panier[$id] > 1) {
+                $panier[$id]--;
+            } else {
+                unset($panier[$id]);
+            }
+        }
+
+        $session->set('panier', $panier);
+
+        //On redirige vers la page du panier
+        return $this->redirectToRoute('cart_index');
+    }
+
+
+    #[Route('/delete/{id}', name: 'delete')]
+    public function delete(Product $product, SessionInterface $session): Response
+    {
+        // Récupérer l'id du produit
+        $id = $product->getId();
+
+        //On récupère le panier existant
+        $panier = $session->get('panier', []);
+
+        //On ajoute le produit du panier s'il n'y a qu'un exemplaire
+        //Sinon on décrémente sa quantité
+        if (!empty($panier[$id])) {
+            unset($panier[$id]);
+        }
+
+        $session->set('panier', $panier);
+
+        //On redirige vers la page du panier
+        return $this->redirectToRoute('cart_index');
+    }
+
+
+    #[Route('/empty', name: 'empty')]
+    public function empty(SessionInterface $session): Response
+    {
+        $session->remove('panier');
+
+        return $this->redirectToRoute('cart_index');
+    }
 }

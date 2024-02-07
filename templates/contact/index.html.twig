@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Zayam - Contact
+{% endblock %}
+
+{% block stylesheets %}
+	<link rel="stylesheet" href="{{ asset('assets/styles/bootstrap.min.css') }}">
+	<link rel="stylesheet" href="{{ asset('assets/styles/style.css') }}">
+{% endblock %}
+
+{% block body %}
+	<div class="container">
+		{% for message in app.flashes('Succès') %}
+			<div class="alert alert-success mt-4">
+				{{ message }}
+			</div>
+		{% endfor %}
+		{{ form(form) }}
+	</div>
+{% endblock %}

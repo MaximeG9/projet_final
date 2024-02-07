@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello CartController!{% endblock %}
+{% block title %}Panier{% endblock %}
 
 {% block stylesheets %}
 	<link rel="stylesheet" href="{{ asset('assets/styles/bootstrap.min.css') }}">
@@ -30,14 +30,28 @@
                         <td>{{ element.quantity }}</td>
                         <td>{{ element.quantity * element.product.price / 100 }}€</td>
                         <td>
-                            <a href ="#" class="btn btn-success">+</a>
-                            <a href ="#" class="btn btn-warning">-</a>
-                            <a href ="#" class="btn btn-danger">Supprimer</a>
+                            <a href ="{{ path('cart_add', {id: element.product.id}) }}" class="btn btn-success">+</a>
+                            <a href ="{{ path('cart_remove', {id: element.product.id}) }}" class="btn btn-warning">-</a>
+                            <a href ="{{ path('cart_delete', {id: element.product.id}) }}" class="btn btn-danger">Supprimer</a>
                         </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="5">Votre panier est vide</td>
                     </tr>
                 {% endfor %}
             </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="3">Total</td>
+                    <td>{{ total / 100 }}€</td>
+                    <td>
+                        <a href="{{ path('cart_empty') }}" class="btn btn-danger">Vider</a>
+                    </td>
+                </tr>
+            </tfoot>
          </table>
+         <a href="{{ path('order_add') }}" class="btn btn-primary">Valider le panier</a>
         </div>
     </section>
 </main>

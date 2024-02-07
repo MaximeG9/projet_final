@@ -10,12 +10,6 @@ use Symfony\Component\Routing\Annotation\Route;
 #[Route('/produits', name: 'product_')]
 class ProductController extends AbstractController
 {
-    #[Route('/', name: 'index')]
-    public function index(): Response
-    {
-        return $this->render('product/index.html.twig'); 
-    }
-
     #[Route('/{slug}', name: 'short')]
     public function short(Product $product): Response
     {

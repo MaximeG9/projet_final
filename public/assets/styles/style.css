@@ -3,7 +3,7 @@
   background-color: black;
 }
 .img-home .img-container {
-  height: 35vh;
+  height: 45vh;
 }
 .img-home .img-container .img-plage {
   -o-object-fit: cover;
@@ -12,12 +12,13 @@
   height: 100%;
 }
 .img-home .text-presentation {
-  padding: 4rem 1.6rem;
+  width: 60%;
+  padding: 2rem 1.6rem;
   text-align: center;
   background-color: #fff;
 }
-.img-home .text-presentation h1 {
-  color: blue;
+.img-home .text-presentation .tp-container h1 {
+  color: green;
   font-weight: bold;
   text-transform: uppercase;
 }
