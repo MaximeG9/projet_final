@@ -21,9 +21,10 @@
 				<img class="img-plage" src="{{ asset('assets/uploads/plage.jpg') }}"/>
 			</div>
 			<div class="text-presentation">
-				<h1>Zayam - le short qui cache la 'awra</h1>
-            	<p>La pudeur sans compromis</p>
-                <a href="{{ path('product_short', { "slug": product[0].slug }) }}" class="btn btn-primary btn-lg">Voir le produit</a>
+				<div class="content-container">
+					<h1>Zayam - le short qui cache la 'awra</h1>
+					<p>Le short Zayam est spécialement conçu pour cacher la 'awra, vous assure de profiter pleinement de vos activités nautiques sans compromettre votre pudeur.</p>
+				</div>
 			</div>
 		</div>
 	</section>
@@ -56,6 +57,9 @@
 					<span class="carousel-control-next-icon" aria-hidden="true"></span>
 					<span class="visually-hidden">Next</span>
 				</button>
+			</div>
+			<div class="btn-productWrapper">
+				{{ product[0].name }}
 			</div>
 			<div class="btn-productWrapper">
 				<a href="{{ path('product_short', { "slug": product[0].slug }) }}" class="btn btn-primary btn-lg">Voir le produit</a>

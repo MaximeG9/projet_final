@@ -1,9 +1,9 @@
-const buttons = document.querySelectorAll(".faq-toggle");
+const chevrons = document.querySelectorAll(".faq-toggle");
 const text = document.querySelectorAll(".faq-text");
 
-buttons.forEach((button) => {
-  button.addEventListener("click", () => {
-    button.previousElementSibling.classList.toggle("active-txt");
-    button.parentNode.classList.toggle("active");
+chevrons.forEach((chevron) => {
+  chevron.addEventListener("click", () => {
+    chevron.previousElementSibling.classList.toggle("active-txt");
+    chevron.parentNode.classList.toggle("active");
   });
 });
