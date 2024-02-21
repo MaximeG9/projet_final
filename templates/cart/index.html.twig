@@ -1,6 +1,7 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Panier{% endblock %}
+{% block title %}Panier
+{% endblock %}
 
 {% block stylesheets %}
 	<link rel="stylesheet" href="{{ asset('assets/styles/bootstrap.min.css') }}">
@@ -8,51 +9,126 @@
 {% endblock %}
 
 {% block body %}
-<main class="container">
-    <section class="row">
-        <div class="col-12">
-         <h1>Panier</h1>
-         <table class="table">
-            <thead>
-                <tr>
-                    <th>Produit</th>
-                    <th>Prix</th>
-                    <th>Quantité</th>
-                    <th>Total</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for element in data %}
-                    <tr>
-                        <td>{{ element.product.name }}</td>
-                        <td>{{ element.product.price / 100 }}€</td>
-                        <td>{{ element.quantity }}</td>
-                        <td>{{ element.quantity * element.product.price / 100 }}€</td>
-                        <td>
-                            <a href ="{{ path('cart_add', {id: element.product.id}) }}" class="btn btn-success">+</a>
-                            <a href ="{{ path('cart_remove', {id: element.product.id}) }}" class="btn btn-warning">-</a>
-                            <a href ="{{ path('cart_delete', {id: element.product.id}) }}" class="btn btn-danger">Supprimer</a>
-                        </td>
-                    </tr>
-                {% else %}
-                    <tr>
-                        <td colspan="5">Votre panier est vide</td>
-                    </tr>
-                {% endfor %}
-            </tbody>
-            <tfoot>
-                <tr>
-                    <td colspan="3">Total</td>
-                    <td>{{ total / 100 }}€</td>
-                    <td>
-                        <a href="{{ path('cart_empty') }}" class="btn btn-danger">Vider</a>
-                    </td>
-                </tr>
-            </tfoot>
-         </table>
-         <a href="{{ path('order_add') }}" class="btn btn-primary">Valider le panier</a>
-        </div>
-    </section>
+	<section class="row">
+		<div class="col-12">
+			<h1>Panier</h1>
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Produit</th>
+						<th>Prix</th>
+						<th>Quantité</th>
+						<th>Total</th>
+						<th>Action</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for element in data %}
+						<tr>
+							<td>{{ element.product.name }}</td>
+							<td>{{ element.product.price / 100 }}€</td>
+							<td>{{ element.quantity }}</td>
+							<td>{{ element.quantity * element.product.price / 100 }}€</td>
+							<td>
+								<a href="{{ path('cart_add', {id: element.product.id}) }}" class="btn btn-success">+</a>
+								<a href="{{ path('cart_remove', {id: element.product.id}) }}" class="btn btn-warning">-</a>
+
+							</td>
+						</tr>
+					{% else %}
+						<tr>
+							<td colspan="5">Votre panier est vide</td>
+						</tr>
+					{% endfor %}
+				</tbody>
+				<tfoot>
+					<tr>
+						<td colspan="3">Total</td>
+						<td>{{ total / 100 }}€</td>
+						<td>
+							<a href="{{ path('cart_empty') }}" class="btn btn-danger">Vider</a>
+						</td>
+					</tr>
+				</tfoot>
+			</table>
+			<a href="{{ path('order_add') }}" class="btn btn-primary">Valider le panier</a>
+		</div>
+	</section>
 </main>
+
+
+<section class="pt-5 pb-5">
+	<div class="container-flex">
+		<div class="row w-100">
+			{% for element in data %}
+				<div class="col-lg-12 col-md-12 col-12">
+					<h3 class="display-5 mb-5 text-center">Votre panier</h3>
+					<table id="shoppingCart" class="table table-condensed table-responsive">
+						<thead>
+							<tr>
+								<th style="width:60%">Produit</th>
+								<th style="width:12%">Prix</th>
+								<th style="width:12%">Quantité</th>
+								<th style="width:16%">Actions</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td data-th="Product">
+									<div class="row">
+										<div class="col-md-3 text-left">
+											<img src="{{ asset('assets/uploads/shortBleu.jpg') }}" alt="" class="img-fluid d-none d-md-block rounded mb-2 shadow ">
+										</div>
+										<div class="col-md-9 text-left mt-sm-2">
+											<h5>{{ element.product.name }}</h5>
+											<p class="font-weight-light">Couleur :</p>
+											<p class="font-weight-light">Taille :</p>
+										</div>
+									</div>
+								</td>
+								<td data-th="Price">{{ element.product.price / 100 }}€</td>
+								<td data-th="Quantity">
+                                    <div class="d-flex p-1 justify-content-between border rounded-1">
+                                        <a href="{{ path('cart_remove', {id: element.product.id}) }}" class="text-black text-decoration-none">-</a>
+                                        <div>{{ element.quantity }}</div>
+                                        <a href="{{ path('cart_add', {id: element.product.id}) }}" class="text-black text-decoration-none">+</a>
+                                    </div>
+								</td>
+								<td class="actions" data-th="">
+									<div class="text-right">
+										<a href="{{ path('cart_delete', {id: element.product.id}) }}" class="text-black">Retirer</a>
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+                    <a href="{{ path('cart_empty') }}" class="btn btn-danger">Vider le panier</a>
+					<div class="d-flex">
+						<h4>Total</h4>
+						<h3>{{ element.quantity * element.product.price / 100 }}€</h3>
+					</div>
+				</div>
+			{% else %}
+				<tr>
+					<td colspan="5">Votre panier est vide</td>
+				</tr>
+			{% endfor %}
+		</div>
+		<div class="row mt-4 d-flex align-items-center">
+			<div class="col-sm-6 order-md-2 text-right">
+
+                {# PAIEMENT STRIPE #}
+                <form method="POST" action="{{ path('payment_stripe', {'reference': '65c1314137d8b'}) }}">
+                    <button class="btn btn-primary mb-4 btn-lg pl-5 pr-5" type="submit">Payer par Stripe</button>
+                </form>
+				
+			</div>
+			<div class="col-sm-6 mb-3 mb-m-1 order-md-1 text-md-left">
+				<a href="catalog.html">
+					<i class="fas fa-arrow-left mr-2"></i>
+					Continue Shopping</a>
+			</div>
+		</div>
+	</div>
+
 {% endblock %}

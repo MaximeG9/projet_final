@@ -23,84 +23,115 @@
 			<div class="text-presentation">
 				<div class="content-container">
 					<h1>Zayam - le short qui cache la 'awra</h1>
-					<p>Le short Zayam est spécialement conçu pour cacher la 'awra, vous assure de profiter pleinement de vos activités nautiques sans compromettre votre pudeur.</p>
+					<p>Le short Zayam est spécialement conçu pour cacher la 'awra, vous assure de profiter pleinement de vos activités nautiques sans compromettre votre pudeur.</p>
 				</div>
 			</div>
 		</div>
 	</section>
 
 	{# SECTION SLIDER PRODUIT ACCUEIL #}
-	<section>
-		<div class="product-wrapper">
-			<div id="carouselExampleIndicators" class="carousel slide">
-				<div class="carousel-indicators">
-					<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-					<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-					<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+	<div class="container-flex">
+		<section>
+			<div class="product-wrapper">
+				<div id="carouselExampleIndicators" class="carousel slide">
+					<div class="carousel-indicators">
+						<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+						<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+						<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+					</div>
+					<div class="carousel-inner">
+						<div class="carousel-item active">
+							<img src="{{ asset('assets/uploads/shortBleu.jpg') }}" class="d-block w-100" alt="...">
+						</div>
+						<div class="carousel-item">
+							<img src="{{ asset('assets/uploads/shortNoir.jpg') }}" class="d-block w-100" alt="...">
+						</div>
+						<div class="carousel-item">
+							<img src="{{ asset('assets/uploads/escaliers.jpg') }}" class="d-block w-100" alt="...">
+						</div>
+					</div>
+					<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						<span class="visually-hidden">Previous</span>
+					</button>
+					<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+						<span class="carousel-control-next-icon" aria-hidden="true"></span>
+						<span class="visually-hidden">Next</span>
+					</button>
 				</div>
-				<div class="carousel-inner">
-					<div class="carousel-item active">
-						<img src="{{ asset('assets/uploads/shortBleu.jpg') }}" class="d-block w-100" alt="...">
+				<div class="selector-infos">
+					<p>{{ product[0].name }}</p>
+					<p>{{ product[0].description }}</p>
+					<p>TAILLES :</p>
+					<button type="button" class="btn btn-dark">S</button>
+					<button type="button" class="btn btn-dark">M</button>
+					<button type="button" class="btn btn-dark">L</button>
+					<button type="button" class="btn btn-dark">XL</button>
+					<p>COULEURS
+					</p>
+					<button type="button" class="btn btn-dark">Noir</button>
+					<button type="button" class="btn btn-dark">Bleu</button>
+					<p>Il reste
+						{{ product[0].stock }}
+						produits en stock</p>
+					<p>prix :
+						{{ product[0].price / 100 }}
+						€</p>
+					{% if product[0].stock > 0 %}
+						<a href="{{ path('product_short', { "slug": product[0].slug }) }}" class="boutton">Voir le produit</a>
+					{% else %}
+						<p class="text-danger">Temporairement en rupture de stock</p>
+					{% endif %}
+				</div>
+			</div>
+		</section>
+
+		{# SECTION IMAGE WITH TEXT 1 #}
+
+		<section>
+			<div class="image-with-text1">
+				<div class="img-text-container">
+					<div class="image">
+						<img src="{{ asset('assets/uploads/plongeon.jpg') }}" class="img-text1"/>
 					</div>
-					<div class="carousel-item">
-						<img src="{{ asset('assets/uploads/shortNoir.jpg') }}" class="d-block w-100" alt="...">
-					</div>
-					<div class="carousel-item">
-						<img src="{{ asset('assets/uploads/escaliers.jpg') }}" class="d-block w-100" alt="...">
+					<div class="img-text-description">
+						<h3>Idéal pour les activités nautiques</h3>
+						<p>Le short Zayam est spécialement conçu pour cacher la 'awra, vous assure de profiter pleinement de vos activités nautiques sans compromettre votre pudeur.</p>
+						<p>Conçu avec soin, ce short extensible offre une couverture optimale, vous permettant de vous adonner aux plaisirs de la plage, de la piscine ou de toute autre activité aquatique en toute confiance.</p>
 					</div>
 				</div>
-				<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-					<span class="visually-hidden">Previous</span>
-				</button>
-				<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-					<span class="carousel-control-next-icon" aria-hidden="true"></span>
-					<span class="visually-hidden">Next</span>
-				</button>
 			</div>
-			<div class="btn-productWrapper">
-				{{ product[0].name }}
-			</div>
-			<div class="btn-productWrapper">
-				<a href="{{ path('product_short', { "slug": product[0].slug }) }}" class="btn btn-primary btn-lg">Voir le produit</a>
-			</div>
-		</div>
-	</section>
+		</section>
 
-	{# SECTION IMAGE #}
-	<section>
-		<div class="images-block">
-			<div class="img-small">
-				<img src="{{ asset('assets/uploads/grosPlanEscaliers.jpg') }}" class="img-1"/>
+		{# SECTION IMAGE #}
+		<section>
+			<div class="image-with-text2">
+				<div class="images-block">
+					<div class="img-small">
+						<img src="{{ asset('assets/uploads/grosPlanEscaliers.jpg') }}" class="img-1"/>
+					</div>
+					<div class="img-large">
+						<img src="{{ asset('assets/uploads/boxeBleu.jpg') }}" class="img-2"/>
+					</div>
+				</div>
+				<div class="description">
+					<div class="text-content">
+						<h3>Adéquate pour toutes les activités physiques</h3>
+						<p>
+							Le short 'awra pensé pour cacher la 'awra, est l'accompagnement idéal pour toutes vos activités sportives.
+						</p>
+						<p>
+							Conçu pour offrir une liberté de mouvement optimale, ce short assure un confort exceptionnel 
+																				pendant vos séances d'exercice, que vous pratiquiez du football, de la musculation, 
+																				ou toute autre activité physique.
+						</p>
+					</div>
+				</div>
 			</div>
-			<div class="img-large">
-				<img src="{{ asset('assets/uploads/boxeBleu.jpg') }}" class="img-2"/>
-			</div>
-		</div>
-	</section>
-
-	{# SECTION TEXTE #}
-	<section>
-		<div class="description">
-			<div class="text-content">
-				<h2>{{ product[0].name }}</h2>
-				<p>
-					Découvrez notre Short de Bain 'Awra', conçu avec soin pour répondre 
-					aux besoins des hommes musulmans cherchant une option de maillot de bain 
-					qui respecte les principes de modestie islamique.
-					Profitez du plaisir des activités nautiques et sportives tout en préservant 
-					votre pudeur avec ce short de bain pensé pour couvrir adéquatement la 'awra.
-				</p>
-			</div>
-		</div>
-	</section>
-
-    {% include "partials/faq.html.twig" %}
-
+		</section>
+	</div>
 	{# SECTION AVIS #}
-	<section class="rev-section">
-        <div></div>
-    </section>
+	{% include "partials/testimonials.html.twig" %}
 {% endblock %}
 
 {% block javascripts %}

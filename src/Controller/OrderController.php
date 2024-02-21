@@ -30,7 +30,7 @@ class OrderController extends AbstractController
         // On remplit la commande
         $order->setReference(uniqid());
 
-        // On parcourt le permissionnier pour créer les détails de commande
+        // On parcourt le panier pour créer les détails de commande
         foreach($panier as $item => $quantity) {
             $orderDetails = new OrderDetails();
 

@@ -1,41 +1,35 @@
-<div class="faq-section">
-	<h3>FAQ</h3>
-	<div class="faq-container">
-		<div class="faq">
-			<h5 class="faq-title">
-				Quelle taille choisir ?
-			</h5>
-			<p class="faq-text">
-				Pour un confort et un maintien optimal, optez pour la taille que vous avez l'habitude de prendre.
-			</p>
-			<button class="faq-toggle">
-				<i class="fas fa-chevron-down"><img src="{{ asset('assets/uploads/svg/chevron-bas.svg') }}" width="25" height="25"></i>
-				<i class="fas fa-chevron-up"><img src="{{ asset('assets/uploads/svg/chevron-haut.svg') }}" width="25" height="25"></i>
+<div class="container">
+	<div class="accordion">
+		<div class="accordion-item">
+			<button id="accordion-button-1" aria-expanded="false">
+				<span class="accordion-title">Quelle taille choisir ?</span>
+				<span class="icon" aria-hidden="true"></span>
 			</button>
+			<div class="accordion-content">
+				<p>Pour un confort et un maintien optimal, optez pour la taille que vous avez l'habitude de prendre.</p>
+			</div>
 		</div>
-		<div class="faq">
-			<h5 class="faq-title">
-				Est-il adapté pour le sport ?
-			</h5>
-			<p class="faq-text activet">
-				Oui, vous pouvez pratiquer votre activité physique avec le short de bain 'awra.
-			</p>
-			<button class="faq-toggle">
-				<i class="fas fa-chevron-down"><img src="{{ asset('assets/uploads/svg/chevron-bas.svg') }}" width="25" height="25"></i>
-				<i class="fas fa-chevron-up"><img src="{{ asset('assets/uploads/svg/chevron-haut.svg') }}" width="25" height="25"></i>
+		<div class="accordion-item">
+			<button id="accordion-button-2" aria-expanded="false">
+				<span class="accordion-title">Est-il adapté pour le sport ?</span>
+				<span class="icon" aria-hidden="true"></span>
 			</button>
+			<div class="accordion-content">
+				<p>Oui, vous pouvez pratiquer votre activité physique avec le short de bain 'awra.</p>
+			</div>
 		</div>
-		<div class="faq">
-			<h5 class="faq-title">
-				Devant qui dois-je cacher ma 'awra ?
-			</h5>
-			<p class="faq-text activet">
-				L'homme musulman doit cacher sa 'awra devant tout le monde hormis sa femme.
-			</p>
-			<button class="faq-toggle">
-				<i class="fas fa-chevron-down"><img src="{{ asset('assets/uploads/svg/chevron-bas.svg') }}" width="25" height="25"></i>
-				<i class="fas fa-chevron-up"><img src="{{ asset('assets/uploads/svg/chevron-haut.svg') }}" width="25" height="25"></i>
+		<div class="accordion-item">
+			<button id="accordion-button-3" aria-expanded="false">
+				<span class="accordion-title">Quels sont les délais de livriason ?</span>
+				<span class="icon" aria-hidden="true"></span>
 			</button>
+			<div class="accordion-content">
+				<p>Victime de son succès, le short de bain 'awra est en rupture de stock. Pour satisfaire les demandes, vous pouvez commander nos shorts et être livré à partir du 10 février</p>
+			</div>
 		</div>
 	</div>
-</div>
+</div></div>
+
+{% block javascripts %}
+	<script src="{{ asset('assets/js/script.js') }}" defer></script>
+{% endblock %}

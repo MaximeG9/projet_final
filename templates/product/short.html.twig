@@ -10,9 +10,9 @@
 {% endblock %}
 
 {% block body %}
-	<main class="container">
+	<main class="container-flex">
 		<section class="row">
-			<div class="">
+			<div class="product-wrapper">
 				<div id="carouselExampleIndicators" class="carousel slide">
 					<div class="carousel-indicators">
 						{% for iteration in 1..product.images|length %}
@@ -35,49 +35,110 @@
 						<span class="visually-hidden">Next</span>
 					</button>
 				</div>
+				<div class="selector-infos">
+					<p>{{ product.name }}</p>
+					<p>{{ product.description }}</p>
+					<p>TAILLES :</p>
+					<button type="button" class="btn btn-dark">S</button>
+					<button type="button" class="btn btn-dark">M</button>
+					<button type="button" class="btn btn-dark">L</button>
+					<button type="button" class="btn btn-dark">XL</button>
+					<p>COULEURS
+					</p>
+					<button type="button" class="btn btn-dark">Noir</button>
+					<button type="button" class="btn btn-dark">Bleu</button>
+					<p>Il reste
+						{{ product.stock }}
+						produits en stock</p>
+					<p>prix :
+						{{ product.price / 100 }}
+						€</p>
+					{% if product.stock > 0 %}
+						<a href="{{ path('cart_add', {id: product.id}) }}" class="boutton">Ajouter au panier</a>
+					{% else %}
+						<p class="text-danger">Temporairement en rupture de stock</p>
+					{% endif %}
+				</div>
 			</div>
-			<div class="">
-				<p>{{ product.name }}</p>
-				<p>{{ product.description }}</p>
-				<p>COULEURS</p>
-				<p>S M L XL</p>
-				<p>COULEURS</p>
-				<p>Il reste
-					{{ product.stock }}
-					produits en stock</p>
-				<p>prix :
-					{{ product.price / 100 }}
-					€</p>
-				{% if product.stock > 0 %}
-					<a href="{{ path('cart_add', {id: product.id}) }}" class="btn btn-success">Ajouter au panier</a>
-				{% else %}
-					<p class="text-danger">Temporairement en rupture de stock</p>
-				{% endif %}
-			</div>
-			<div class="product-desc">
-				<div>
-					<h3>
-						Le short 'awra allie pudeur et style
-					</h3>
+
+			<div class="desc-faq">
+				<div class="parag-desc">
 					<p>
-						Découvrez l'alliance de confort et de pudeur avec notre Short 'Awra Zayam.						
-						Pavanez vous sur la plage avec style tout en préservant votre pudeur lors de vos moments de baignade. Conçu pour offrir une couverture optimale, ce short 'awra fusionne style, confort et respect des principes de la modestie islamique.
-						Adapté aussi pour le sport						
-						Très léger et extensible, atteignez de nouveaux sommets tout en maintenant votre pudeur avec le Short 'Awra Zayam. Parfait pour les activités sportives, ce short offre une liberté de mouvement sans compromis sur l'élégance et le respect des valeurs islamiques.						
-						Rejoignez les hommes qui aiment le style et la pudeur et portez le short 'awra durant votre baignade et votre pratique du sports.
+						Découvrez notre Short de Bain 'Awra', conçu avec soin pour répondre aux besoins des hommes 
+																		musulmans cherchant une option de maillot de bain qui respecte les principes de modestie islamique.
+					</p>
+					<p>
+						Profitez du plaisir des activités nautiques et sportives tout en préservant 
+																		votre pudeur avec ce short de bain pensé pour couvrir adéquatement la 'awra.
 					</p>
 				</div>
-				<div class="img-product-desc">
-					<img src="{{ asset('assets/uploads/montage.png') }}"/>
+				{% include "partials/faq.html.twig" %}
+			</div>
+
+
+			<div class="product-desc">
+				<div class="img-text-product1">
+					<div class="img-product-desc">
+						<img src="{{ asset('assets/uploads/short-desc-1.png') }}"/>
+					</div>
+					<div class="img-text-desc">
+						<h3>
+							Le Short de Bain 'Awra Respectueux de la Pudeur
+						</h3>
+						<p>
+							Le Short de Bain 'Awra va au-delà du simple vêtement de plage. 
+																					C'est votre maillot de bain dédié à préserver votre pudeur avec élégance.
+						</p>
+						<span>Pourquoi choisir le Short de Bain 'Awra ?</span>
+						<ul>
+							<li>
+								Cacher la 'Awra en toute circonstance : Conçu spécialement pour masquer la 'Awra, 
+																								vous permettant de vous sentir à l'aise et en confiance.
+							</li>
+							<li>
+								Polyvalence : Plus qu'un simple maillot de bain, il est idéal pour vos activités nautiques, 
+																								vos séances de sport, ou simplement pour vous détendre au bord de la piscine.
+							</li>
+							<li>
+								Style moderne : Associez votre engagement envers la pudeur avec une esthétique moderne et soignée.
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="img-text-product2">
+					<div class="img-product-desc">
+						<img src="{{ asset('assets/uploads/short-desc-2.png') }}"/>
+					</div>
+					<div class="img-text-desc">
+						<h3>
+							Le short 'awra allie pudeur et style
+						</h3>
+						<h5>
+							Découvrez l'alliance de confort et de pudeur avec notre Short 'Awra Zayam.
+						</h5>
+						<p>
+							Pavanez vous sur la plage avec style tout en préservant votre pudeur lors de vos moments de baignade. 
+																					Conçu pour offrir une couverture optimale, ce short 'awra fusionne style, confort et respect des principes 
+																					de la modestie islamique.
+						</p>
+
+						<h5>Adapté aussi pour le sport</h5>
+						<p>
+							Très léger et extensible, atteignez de nouveaux sommets tout en maintenant votre pudeur avec 
+																					le Short 'Awra Zayam. Parfait pour les activités sportives, ce short offre une liberté de mouvement 
+																					sans compromis sur l'élégance et le respect des valeurs islamiques.
+						</p>
+						<p>
+							Rejoignez les hommes qui aiment le style et la pudeur et portez le short 'awra durant votre baignade 
+																					et votre pratique du sports.
+						</p>
+					</div>
+
 				</div>
 			</div>
-
-			{% include "partials/faq.html.twig" %}
-
-			<div class="reviews">
-				reviews
-			</div>
 		</section>
+		{% include "partials/testimonials.html.twig" %}
 	</main>
 {% endblock %}
 
