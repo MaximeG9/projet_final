@@ -34,7 +34,8 @@ class CartController extends AbstractController
 
         return $this->render('cart/index.html.twig', [
             'data' => $data,
-            'total' => $total
+            'total' => $total,
+            // 'reference' => $reference 
         ]);
     }
 

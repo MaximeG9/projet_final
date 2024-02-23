@@ -47,13 +47,8 @@ class OrderController extends AbstractController
             $order->addOrderDetail($orderDetails);
         }
 
-        // ON persiste et on flush
-        $entityManager->persist($order);
-        $entityManager->flush();
+        $session->set('order', $order);
 
-        $session->remove('panier');
-
-        $this->addFlash('message', 'Votre commande a été validée');
-        return $this->redirectToRoute('app_home');
+        return $this->redirectToRoute('payment_stripe');
     }
 }

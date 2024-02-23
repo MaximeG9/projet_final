@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Paiement réussi
+{% endblock %}
+
+{% block stylesheets %}
+	<link rel="stylesheet" href="{{ asset('assets/styles/bootstrap.min.css') }}">
+	<link rel="stylesheet" href="{{ asset('assets/styles/error.css') }}">
+{% endblock %}
+
+{% block body %}
+	<section
+		class="success-container">
+		<!-- component -->
+		<div class="content-container">
+			<div class="svg-error">
+				<img src="{{ asset('assets/uploads/svg/error.svg') }}">
+			</div>
+			<div class="text-content">
+				<h3>Paiement échoué !</h3>
+				<p>Un problème est survenu.</p>
+				<p>Veuillez vérifier vos informations bancaires et réessayer.</p>
+				<p>
+					Merci !
+				</p>
+				<div class="home-button">
+					<a href="{{ path('app_home') }}" class="boutton">
+						retourner à l'accueil
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+{% endblock %}

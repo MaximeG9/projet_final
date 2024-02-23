@@ -5,7 +5,7 @@
 
 {% block stylesheets %}
 	<link rel="stylesheet" href="{{ asset('assets/styles/bootstrap.min.css') }}">
-	<link rel="stylesheet" href="{{ asset('assets/styles/style.css') }}">
+	<link rel="stylesheet" href="{{ asset('assets/styles/success.css') }}">
 {% endblock %}
 
 {% block body %}
@@ -88,11 +88,11 @@
 								</td>
 								<td data-th="Price">{{ element.product.price / 100 }}€</td>
 								<td data-th="Quantity">
-                                    <div class="d-flex p-1 justify-content-between border rounded-1">
-                                        <a href="{{ path('cart_remove', {id: element.product.id}) }}" class="text-black text-decoration-none">-</a>
-                                        <div>{{ element.quantity }}</div>
-                                        <a href="{{ path('cart_add', {id: element.product.id}) }}" class="text-black text-decoration-none">+</a>
-                                    </div>
+									<div class="d-flex p-1 justify-content-between border rounded-1">
+										<a href="{{ path('cart_remove', {id: element.product.id}) }}" class="text-black text-decoration-none">-</a>
+										<div>{{ element.quantity }}</div>
+										<a href="{{ path('cart_add', {id: element.product.id}) }}" class="text-black text-decoration-none">+</a>
+									</div>
 								</td>
 								<td class="actions" data-th="">
 									<div class="text-right">
@@ -102,7 +102,7 @@
 							</tr>
 						</tbody>
 					</table>
-                    <a href="{{ path('cart_empty') }}" class="btn btn-danger">Vider le panier</a>
+					<a href="{{ path('cart_empty') }}" class="btn btn-danger">Vider le panier</a>
 					<div class="d-flex">
 						<h4>Total</h4>
 						<h3>{{ element.quantity * element.product.price / 100 }}€</h3>
@@ -115,20 +115,19 @@
 			{% endfor %}
 		</div>
 		<div class="row mt-4 d-flex align-items-center">
-			<div class="col-sm-6 order-md-2 text-right">
+			<div
+				class="col-sm-6 order-md-2 text-right">
 
-                {# PAIEMENT STRIPE #}
-                <form method="POST" action="{{ path('payment_stripe', {'reference': '65c1314137d8b'}) }}">
-                    <button class="btn btn-primary mb-4 btn-lg pl-5 pr-5" type="submit">Payer par Stripe</button>
-                </form>
-				
+				{# PAIEMENT STRIPE #}
+				<a href="{{ path('order_add') }}" class="btn btn-primary mb-4 btn-lg pl-5 pr-5">Payer par Stripe</a>
 			</div>
 			<div class="col-sm-6 mb-3 mb-m-1 order-md-1 text-md-left">
-				<a href="catalog.html">
+				<a href="{{ path('app_home') }}">
 					<i class="fas fa-arrow-left mr-2"></i>
-					Continue Shopping</a>
+					Continuer mes achats</a>
 			</div>
 		</div>
 	</div>
+</section>
 
 {% endblock %}

@@ -1,4 +1,3 @@
-// --------------------------HEADER--------------------------
 $font-size-extra-small: 12px;
 $font-size-small: 14px;
 $font-size-medium: 16px;
@@ -12,9 +11,9 @@ $font-size-h4: 25px;
 $font-size-h5: 22px;
 $font-size-h6: 20px;
 
-$primary: #A3C2E1;
+$primary: #a3c2e1;
 
-// CONTAINER
+// ---------------------------CONTAINER---------------------------
 .container-flex {
   padding: 0 15px;
 
@@ -33,22 +32,22 @@ $primary: #A3C2E1;
 .img-home {
   height: 48vh;
 
-  @media only screen and (min-device-width : 768px) and (max-device-width : 990px) {
+  @media only screen and (min-device-width: 768px) and (max-device-width: 990px) {
     height: 60vh;
   }
 
-  @media only screen and (min-device-width : 991px) {
+  @media only screen and (min-device-width: 991px) {
     height: 80vh;
   }
 
   .img-container {
     height: 36vh;
 
-    @media only screen and (min-device-width : 768px) and (max-device-width : 990px) {
+    @media only screen and (min-device-width: 768px) and (max-device-width: 990px) {
       height: 60vh;
     }
 
-    @media only screen and (min-device-width : 991px) {
+    @media only screen and (min-device-width: 991px) {
       height: 80vh;
     }
 
@@ -68,13 +67,13 @@ $primary: #A3C2E1;
     text-align: center;
     background-color: rgba(241, 241, 241, 0.5);
 
-    @media only screen and (min-device-width : 768px) and (max-device-width : 990px) {
+    @media only screen and (min-device-width: 768px) and (max-device-width: 990px) {
       right: 16%;
       top: 33%;
       width: 69%;
     }
 
-    @media only screen and (min-device-width : 991px) {
+    @media only screen and (min-device-width: 991px) {
       right: 20%;
       top: 34%;
       width: 60%;
@@ -101,12 +100,12 @@ $primary: #A3C2E1;
         text-transform: uppercase;
         padding-bottom: 0.5rem;
 
-        @media only screen and (min-device-width : 768px) and (max-device-width : 990px) {
+        @media only screen and (min-device-width: 768px) and (max-device-width: 990px) {
           font-size: 25px;
           padding-bottom: 1rem;
         }
 
-        @media only screen and (min-device-width : 991px) {
+        @media only screen and (min-device-width: 991px) {
           font-size: 33px;
           padding-bottom: 2rem;
         }
@@ -116,11 +115,11 @@ $primary: #A3C2E1;
         margin: 0;
         font-size: $font-size-small;
 
-        @media only screen and (min-device-width : 768px) and (max-device-width : 990px) {
+        @media only screen and (min-device-width: 768px) and (max-device-width: 990px) {
           font-size: 16px;
         }
 
-        @media only screen and (min-device-width : 991px) {
+        @media only screen and (min-device-width: 991px) {
           font-size: 20px;
         }
       }
@@ -138,19 +137,9 @@ $primary: #A3C2E1;
   }
 
   .selector-infos {
-    
-  }
-
-  .product-name {
-    text-align: center;
-  }
-
-  .btn-productWrapper {
-    text-align: center;
-    padding-top: 2rem;
-
     .boutton {
       padding: 1rem 2rem;
+      margin-bottom: 2rem;
       text-decoration: none;
       text-transform: uppercase;
       font-size: $font-size-extra-large;
@@ -158,6 +147,10 @@ $primary: #A3C2E1;
       color: #fff;
       background-color: $primary;
     }
+  }
+
+  .product-name {
+    text-align: center;
   }
 }
 
@@ -212,7 +205,8 @@ $primary: #A3C2E1;
         margin-right: 4rem;
       }
 
-      h3, p {
+      h3,
+      p {
         text-align: center;
       }
     }
@@ -232,14 +226,14 @@ $primary: #A3C2E1;
     @media only screen and (min-width: 768px) {
       width: 50%;
     }
-  
+
     .img-small {
       width: 45vw;
       right: 46%;
       position: absolute;
       z-index: 1;
       box-shadow: 10px 10px 40px 5px rgba(0, 0, 0, 0.55);
-  
+
       .img-1 {
         object-fit: cover;
         width: 100%;
@@ -251,20 +245,19 @@ $primary: #A3C2E1;
         right: 65%;
       }
 
-      @media only screen and (min-device-width : 991px) {
+      @media only screen and (min-device-width: 991px) {
         width: 19vw;
         right: 65%;
       }
-
     }
-  
+
     .img-large {
       width: 50vw;
       position: relative;
       left: 40%;
       margin-top: 60px;
       box-shadow: 10px 10px 40px 5px rgba(0, 0, 0, 0.55);
-  
+
       .img-2 {
         object-fit: cover;
         width: 100%;
@@ -276,7 +269,7 @@ $primary: #A3C2E1;
         left: 35%;
       }
 
-      @media only screen and (min-device-width : 991px) {
+      @media only screen and (min-device-width: 991px) {
         width: 21vw;
         left: 35%;
       }
@@ -289,7 +282,7 @@ $primary: #A3C2E1;
     @media only screen and (min-width: 768px) {
       width: 50%;
     }
-  
+
     .text-content {
       text-align: center;
       background-color: $primary;
@@ -303,7 +296,7 @@ $primary: #A3C2E1;
           font-size: $font-size-h4;
         }
       }
-      
+
       p {
         font-size: 15px;
         line-height: 2.2rem;
@@ -319,310 +312,6 @@ $primary: #A3C2E1;
 }
 
 
-// -----------------------------PAGE PRODUIT------------------------------
-
-.product-wrapper {
-  @media only screen and (min-width: 768px) {
-    display: flex;
-  }
-}
-
-.boutton {
-  padding: 1rem 2rem;
-  margin-bottom: 2rem;
-  text-decoration: none;
-  text-transform: uppercase;
-  font-size: $font-size-extra-large;
-  border-radius: 3px;
-  color: #fff;
-  background-color: $primary;
-}
-
-.desc-faq {
-  @media only screen and (min-width: 992px) {
-    display: flex;
-  }
-
-  .parag-desc {
-    margin-top: 2rem;
-
-    @media only screen and (min-width: 992px) {
-      width: 50%;;
-    }
-  }
-}
-
-
-.product-desc {
-  margin-bottom: 5rem;
-
-  .img-text-product1 {
-    margin-bottom: 5rem;
-
-    .img-product-desc {
-      margin-bottom: 2rem;
-    }
-
-    .img-text-desc {
-      h3 {
-        font-size: $font-size-extra-large;
-        margin-bottom: 2rem;
-      }
-
-      p {
-        margin-bottom: 1.5rem;
-      }
-
-      span {
-        font-size: $font-size-medium;
-      }
-
-      li {
-        line-height: 2rem;
-      }
-
-      p, li {
-        font-size: 15px;
-      }
-    }
-
-    @media only screen and (min-width: 768px) {
-      display: flex;
-    }
-
-    .img-product-desc {
-      width: auto;
-      height: auto;
-
-      img {
-        object-fit: cover;
-        width: 100%;
-        height: 100%;
-      }
-    }
-  }
-
-  .img-text-product2 {
-    @media only screen and (min-width: 768px) {
-      display: flex;
-    }
-
-    .img-product-desc {
-      width: auto;
-      height: auto;
-      margin-bottom: 2rem;
-
-      img {
-        object-fit: cover;
-        width: 100%;
-        height: 100%;
-      }
-    }
-
-    .img-text-desc {
-      h3 {
-        font-size: $font-size-extra-large;
-        margin-bottom: 2rem;
-      }
-
-      h5 {
-        font-size: $font-size-large;
-      }
-
-      p {
-        font-size: 15px;
-        line-height: 2rem;
-      }
-    }
-  }
-}
-
-// -----------------------------FAQ------------------------------
-
-.container {
-  margin: 0 auto;
-  padding: 1rem 0;
-}
-
-.accordion {
-  .accordion-item {
-    border: 1px solid #000000;
-    border-radius: 6px;
-    padding: 0 15px;
-    margin-top: 1rem;
-    button[aria-expanded='true'] {
-      border-bottom: 1px solid #000000;
-    }
-  }
-
-  button {
-    position: relative;
-    display: block;
-    text-align: left;
-    width: 100%;
-    padding: 1em 0;
-    color: #000000;
-    font-size: 1.15rem;
-    font-weight: 400;
-    border: none;
-    background: none;
-    outline: none;
-    &:hover, &:focus {
-      cursor: pointer;
-      color: $primary;
-      &::after {
-        cursor: pointer;
-        color: $primary;
-        border: 1px solid $primary;
-      }
-    }
-    .accordion-title {
-      padding: 1em 1.5em 1em 0;
-    }
-    .icon {
-      display: inline-block;
-      position: absolute;
-      top: 18px;
-      right: 0;
-      width: 22px;
-      height: 22px;
-      border: 1px solid;
-      border-radius: 22px;
-      &::before {
-        display: block;
-        position: absolute;
-        content: '';
-        top: 9px;
-        left: 5px;
-        width: 10px;
-        height: 2px;
-        background: currentColor;
-      }
-      &::after {
-        display: block;
-        position: absolute;
-        content: '';
-        top: 5px;
-        left: 9px;
-        width: 2px;
-        height: 10px;
-        background: currentColor;
-      }
-    }
-  }
-  button[aria-expanded='true'] {
-    color: $primary;
-    .icon {
-      &::after {
-        width: 0;
-      }
-    }
-    + .accordion-content {
-      opacity: 1;
-      max-height: 9em;
-      transition: all 200ms linear;
-      will-change: opacity, max-height;
-    }
-  }
-  .accordion-content {
-    opacity: 0;
-    max-height: 0;
-    overflow: hidden;
-    transition: opacity 200ms linear, max-height 200ms linear;
-    will-change: opacity, max-height;
-    p {
-      color: #000000;
-      font-size: 1rem;
-      font-weight: 300;
-      margin: 1rem 0;
-    }
-  }
-}
-
-
-// -------------------------TESTIMONIALS--------------------------
-
-h2 {
-  text-align: center;
-}
-
-.slideshow-container {
-  position: relative;
-  background-color: rgba(163, 194, 225, 0.35);
-  
-  @media only screen and (min-width: 992px) {
-    margin: 0 15rem; 
-  }
-
-  .mySlides {
-    display: none;
-    padding: 30px 80px 30px 80px;
-    text-align: center;
-  }
-
-  .prev, .next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    width: auto;
-    margin-top: -30px;
-    padding: 16px;
-    color: #888;
-    font-weight: bold;
-    font-size: 20px;
-    border-radius: 0 3px 3px 0;
-    user-select: none;
-
-    &:hover {
-      background-color: rgba(0,0,0,0.8);
-      color: white;
-    }
-  }
-
-  .next {
-    right: 0;
-    border-radius: 3px 0 0 3px;
-  }
-}
-
-.dot-container {
-  text-align: center;
-  padding: 0px 10px 10px 10px;
-
-  .dot {
-    cursor: pointer;
-    height: 10px;
-    width: 10px;
-    margin: 0 2px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: inline-block;
-    transition: background-color 0.6s ease;
-
-    &:hover, &.active {
-      background-color: #717171;
-    }
-  }
-}
-
-p {
-  font-size: 20px;
-}
-
-h3 {
-  font-size: 25px
-}
-
-.author {
-  font-size: 25px
-}
-
-
-// --------------------------PANIER--------------------------
-
-// --------------------------ADMIN LOGIN--------------------------
-
-
 // --------------------------FOOTER--------------------------
 
 .footer {
@@ -631,12 +320,17 @@ h3 {
   .footer-container {
     @media only screen and (min-width: 768px) {
       display: flex;
+      justify-content: space-evenly;
     }
 
     padding: 2rem 0;
 
     .newsletter {
       padding-bottom: 2rem;
+
+      @media only screen and (min-width: 768px) {
+        width: 80%;
+      }
     }
 
     .pied-de-page {

@@ -1,0 +1,27 @@
+.success-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.success-container .content-container {
+  background-color: #f1f1f1;
+  padding: 3rem;
+}
+.success-container .content-container .svg-error {
+  text-align: center;
+  padding-bottom: 2rem;
+}
+.success-container .content-container .svg-error img {
+  width: 70px;
+  height: 70px;
+}
+.success-container .content-container .text-content {
+  text-align: center;
+}
+.success-container .content-container .text-content h3 {
+  margin-bottom: 2rem;
+}
+.success-container .content-container .text-content .home-button {
+  margin-top: 4rem;
+}/*# sourceMappingURL=error.css.map */
