@@ -35,7 +35,6 @@ class CartController extends AbstractController
         return $this->render('cart/index.html.twig', [
             'data' => $data,
             'total' => $total,
-            // 'reference' => $reference 
         ]);
     }
 
@@ -99,8 +98,6 @@ class CartController extends AbstractController
         //On récupère le panier existant
         $panier = $session->get('panier', []);
 
-        //On ajoute le produit du panier s'il n'y a qu'un exemplaire
-        //Sinon on décrémente sa quantité
         if (!empty($panier[$id])) {
             unset($panier[$id]);
         }
